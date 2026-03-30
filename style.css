@@ -1,0 +1,96 @@
+/* ===== MOBILE FIRST ===== */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f5f5f5;
+}
+
+header, footer {
+    text-align: center;
+    background: #333;
+    color: white;
+    padding: 15px;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 10px;
+}
+
+figure {
+    margin: 0;
+    padding: 10px;
+    background: white;
+    border: 2px solid #ccc;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+figcaption {
+    margin-top: 5px;
+}
+
+
+/* ===== TABLET (>=772px) ===== */
+@media (min-width: 772px) {
+
+    main {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    figure {
+        border-radius: 50%;
+        overflow: hidden;
+    }
+
+    figure:last-child {
+        grid-column: span 2;
+    }
+}
+
+
+/* ===== LARGE (>=992px) ===== */
+@media (min-width: 992px) {
+
+    figure {
+        border-radius: 0;
+    }
+
+    figure:nth-child(3n) {
+        grid-column: span 2;
+    }
+}
+
+
+/* ===== REDUCED MOTION ===== */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+
+/* ===== DARK MODE ===== */
+@media (prefers-color-scheme: dark) {
+
+    body {
+        background: #111;
+    }
+
+    figure {
+        background: #222;
+        color: #f5e663;
+        border: 2px solid black;
+    }
+
+    header, footer {
+        background: black;
+        color: #f5e663;
+    }
+}
